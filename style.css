@@ -6,9 +6,16 @@
     font-family: Arial, sans-serif;
 }
 
+html, body {
+    height: 100%;
+}
+
+
 body {
     background-color: #f2e6c9; /* warna dasar kertas tua */
     position: relative;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 
 /* Tekstur serat & noise kertas */
@@ -98,6 +105,8 @@ html {
 .section {
     min-height: 100vh;
     padding: 120px 60px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 
 /* Hero */
@@ -157,30 +166,81 @@ html {
     text-decoration: none;
 }
 
-/* Footer */
-.footer {
-    color: rgb(0, 0, 0);
-    padding: 60px 40px 20px;
+/* ======================
+   FOOTER
+====================== */
+.site-footer {
+  color: #000000;
+  padding: 60px 20px;       /* ruang vertikal */
+  margin-top: 100px;        /* jarak dari section atas */
+  text-align: center;
 }
 
 .footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
+  max-width: 900px;
+  margin: auto;
 }
 
-.footer-brand img {
-    width: 50px;
-    height: 50px;
+.footer-brand {
+  text-align: center;       /* pastikan konten center */
+}
+
+.footer-brand h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin: 8px auto 20px;    /* auto center + ruang */
+}
+
+/* Social icons */
+.footer-social {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .25s;
 }
 
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 15px;
-    text-align: center;
-    font-size: 13px;
-    opacity: 0.7;
+.footer-social a:hover {
+    background: #fff;
+    transform: translateY(-3px);
+}
+
+.footer-social img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.footer-social a img {
+    filter: invert(0); /* ubah ikon jadi hitam di background putih */
+}
+
+/* Copyright */
+copyright,
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 10px;
 }
